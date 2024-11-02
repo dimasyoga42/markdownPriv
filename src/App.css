@@ -7,3 +7,73 @@
   background: #1e293b;
   color: white;
 }
+.markdown-preview h1 {
+ color: white;
+}
+.markdown-preview h2 {
+  color: white;
+ }
+ .markdown-preview h3 {
+  color: white;
+ }
+ .markdown-preview h4 {
+  color: white;
+ }
+ .markdown-preview h5 {
+  color: white;
+ }
+ .markdown-preview h6 {
+  color: white;
+ }
+ /* Tambahkan ini di App.css atau file CSS lain */
+.markdown-preview h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3em;
+}
+
+.markdown-preview h2 {
+  font-size: 1.75em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3em;
+}
+
+.markdown-preview ul, .markdown-preview ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.markdown-preview li {
+  margin: 0.3em 0;
+}
+
+.markdown-preview code {
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: white;
+}
+
+.markdown-preview pre {
+  background-color: #2c2a2a;
+  padding: 1em;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+.markdown-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.markdown-preview th, .markdown-preview td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.markdown-preview th {
+  background-color: #f0f0f0;
+}
