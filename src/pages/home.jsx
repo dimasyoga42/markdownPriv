@@ -27,7 +27,7 @@ const Page = ({ markdowns }) => {
   return (
     <>
       <div className="lg:flex">
-        <div id="texts" className="lg:flex lg:w-full">
+        <div id="texts" className="lg:flex lg:w-full lg:min-h-screen">
           <Editor
             width="100%"
             height="100vh"
