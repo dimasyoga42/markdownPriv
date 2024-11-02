@@ -6,7 +6,7 @@ import Page from "./pages/home";
 
 function App() {
   return (
-    <div className="container mx-auto md:w-10/12">
+    <div className="container mx-auto w-full">
       <Router>
         <Nav />
         <Routes>

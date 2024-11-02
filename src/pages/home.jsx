@@ -12,7 +12,9 @@ const Page = ({ markdowns }) => {
   };
 
   const handleToggle = () => {
-    document.getElementById('texts').classList.toggle('hidden');
+    document.getElementById('box').classList.toggle('hidden');
+    document.getElementById('texts').classList.toggle('hidden')
+
   };
 
   useEffect(() => {
@@ -24,34 +26,37 @@ const Page = ({ markdowns }) => {
 
   return (
     <>
-      <div className="z-0">
-      <div id="texts" className="">
-        <Editor
-          height="200px"
-          defaultLanguage="markdown"
-          defaultValue="mulai lah mengetik markdown"
-          onChange={handleChange}
-          value={markdown}
-          theme="vs-dark"
-          options={{
-            scrollbar: {
-              wordWrap: "on",
-              verticalHasArrows: false,
-              horizontalHasArrows: false,
-              verticalScrollbarSize: 8,   // Ukuran scrollbar vertikal
-              horizontalScrollbarSize: 8, // Ukuran scrollbar horizontal
-              handleMouseWheel: true,
-              alwaysConsumeMouseWheel: false,
-            },
-            minimap: { enabled: false }, // Menonaktifkan minimap jika tidak diperlukan
-            scrollBeyondLastLine: false, // Menonaktifkan scroll lebih dari akhir baris
-            hideCursorInOverviewRuler: true, // Menghilangkan kursor di overview ruler
-          }}
-        />
+      <div className="lg:flex">
+        <div id="texts" className="lg:flex lg:w-full">
+          <Editor
+            width="100%"
+            height="100vh"
+            defaultLanguage="markdown"
+            defaultValue="mulai lah mengetik markdown"
+            onChange={handleChange}
+            value={markdown}
+            theme="vs-dark"
+            options={{
+              scrollbar: {
+                wordWrap: "on",
+                verticalHasArrows: false,
+                horizontalHasArrows: false,
+                verticalScrollbarSize: 8,   // Ukuran scrollbar vertikal
+                horizontalScrollbarSize: 8, // Ukuran scrollbar horizontal
+                handleMouseWheel: true,
+                alwaysConsumeMouseWheel: false,
+              },
+              minimap: { enabled: false }, // Menonaktifkan minimap jika tidak diperlukan
+              scrollBeyondLastLine: false, // Menonaktifkan scroll lebih dari akhir baris
+              hideCursorInOverviewRuler: true, // Menghilangkan kursor di overview ruler
+            }}
+          />
        </div>
-        <Btn onClick={handleToggle} />
+        <div id="box" className="hidden lg:flex lg:w-full">
+          <Live markdowns={markdown} />
+        </div>
       </div>
-      <Live markdowns={markdown} />
+      <Btn onClick={handleToggle} />
     </>
   );
 };
