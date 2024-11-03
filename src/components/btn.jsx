@@ -6,7 +6,7 @@ const Btndw = ({onClick}) => {
 
   return (
         <>
-        <button onClick={onClick} className=" fixed bottom-0 left-0 z-10 mb-4 ml-[65%] lg:ml-[5%] flex h-10 w-10 cursor-pointer items-center justify-center justify-items-center rounded-full">
+        <button onClick={onClick} className=" fixed bottom-0 left-0 z-10 mb-4 md:mb-5 md:ml-[70%] ml-[65%] lg:ml-[5%] flex h-10 w-10 cursor-pointer items-center justify-center justify-items-center rounded-full">
         <Download size={40} color="grey" />
       </button>
         </>
