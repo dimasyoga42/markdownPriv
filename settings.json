@@ -1,3 +1,6 @@
+// settings.json
 {
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode" // Pastikan menggunakan Prettier sebagai formatter
 }
+
