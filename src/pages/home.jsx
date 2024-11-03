@@ -10,7 +10,7 @@ const Page = ({ markdowns }) => {
   const [markdown, setMarkdown] = useState("");
   const handleChange = (value) => {
     setMarkdown(value);
-    localStorage.setItem("mark", JSON.stringify(value));
+    localStorage.setItem(`marl`, JSON.stringify(value));
   };
   const handleToggle = () => {
     document.getElementById("box").classList.toggle("hidden");
@@ -20,7 +20,7 @@ const Page = ({ markdowns }) => {
     download(markdown, `${file}.md`, "text/markdown");
   };
   useEffect(() => {
-    const storedMarkdown = localStorage.getItem("mark");
+    const storedMarkdown = localStorage.getItem(`mark`);
     if (storedMarkdown) {
       setMarkdown(JSON.parse(storedMarkdown));
     }

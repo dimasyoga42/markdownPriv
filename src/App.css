@@ -86,3 +86,9 @@ body {
 .markdown-preview {
   color: white;
 }
+.markdown-preview hr {
+  border: none;
+  height: 2px;
+  background-color: #ffffff; /* Warna garis horizontal */
+  margin: 20px 0; /* Margin atas dan bawah */
+}
