@@ -1,29 +1,33 @@
-markdownPrewiew
----
-merupakan text editor markdown berbasis web yang di kembangkan dengan reactjs, penggunaan markdownPreview dapat di gunakan di mobile dan juga 
-desktop, tampilan dari markdownPreview sangat clea dan nyaman. dan kami menyediakan docs 
-untuk penulisan maarkdown secara lengkap
+## markdownPrewiew
 
+merupakan text editor markdown berbasis web yang di kembangkan dengan reactjs, penggunaan markdownPreview dapat di gunakan di mobile dan juga
+desktop, tampilan dari markdownPreview sangat clea dan nyaman. dan kami menyediakan docs
+untuk penulisan maarkdown secara lengkap
 
 [![2olptus.th.png](https://iili.io/2olptus.th.png)](https://freeimage.host/i/2olptus)
 
 ---
+
 - fitur
-   - live preview
-   - shortcut
+  - live preview
+  - shortcut
+
 ---
+
 # cara penulisan markdown
 
 berikut adalah beberapa syntax markdown
 
-```md
+````md
 # Judul 1
+
 ## Judul 2
+
 ### Judul 3
 
 **Teks Tebal**: `**Teks Tebal**` atau `__Teks Tebal__`
 
-*Iitalik*: `*Iitalik*` atau `_Iitalik_`
+_Iitalik_: `*Iitalik*` atau `_Iitalik_`
 
 ~~Teks yang dicoret~~: `~~Teks yang dicoret~~`
 
@@ -35,7 +39,7 @@ berikut adalah beberapa syntax markdown
    1. Item 1
    2. Item 2
 
-[ini link](http://example.com)  `[Link](http://example.com)`
+[ini link](http://example.com) `[Link](http://example.com)`
 
 ![Gambar](http://example.com/image.jpg): `![Gambar](http://example.com/image.jpg)`
 
@@ -45,18 +49,22 @@ berikut adalah beberapa syntax markdown
 
 ```markdown
 Blok Kode
-
 ```
+````
 
 ## reslut
+
 # Judul 1
+
 ## Judul 2
+
 ### Judul 3
+
 #### Judul 4
 
 **Teks Tebal**: `**Teks Tebal**` atau `__Teks Tebal__`
 
-*Iitalik*: `*Iitalik*` atau `_Iitalik_`
+_Iitalik_: `*Iitalik*` atau `_Iitalik_`
 
 ~~Teks yang dicoret~~: `~~Teks yang dicoret~~`
 
@@ -72,7 +80,7 @@ Blok Kode
 [ini Link](http://example.com): `[Link](http://example.com)`
 
 [![2o5BI4V.th.jpg](https://iili.io/2o5BI4V.th.jpg)](https://freeimage.host/i/2o5BI4V)
- `![Gambar](http://example.com/image.jpg)`
+`![Gambar](http://example.com/image.jpg)`
 
 > Kutipan: `> Kutipan`
 
@@ -80,3 +88,4 @@ Blok Kode
 
 ```markdown
 Blok Kode:
+```

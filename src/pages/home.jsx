@@ -1,36 +1,40 @@
 import Btn from "../components/buttons";
 import Live from "../components/livepriview";
 import { useState, useEffect } from "react";
-import  Editor  from '@monaco-editor/react';
+import Editor from "@monaco-editor/react";
 import download from "downloadjs";
 import Btndw from "../components/btn";
-
+import { useLocation } from "react-router-dom";
 
 const Page = ({ markdowns }) => {
-  const [markdown, setMarkdown] = useState('');
-
+  const [markdown, setMarkdown] = useState("");
   const handleChange = (value) => {
     setMarkdown(value);
     localStorage.setItem("mark", JSON.stringify(value));
   };
   const handleToggle = () => {
-    document.getElementById('box').classList.toggle('hidden');
-    document.getElementById('texts').classList.toggle('hidden');
+    document.getElementById("box").classList.toggle("hidden");
+    document.getElementById("texts").classList.toggle("hidden");
   };
   const handleDownload = () => {
-    download(markdown, 'markdown.md', 'text/markdown');
-  }
+    download(markdown, `${file}.md`, "text/markdown");
+  };
   useEffect(() => {
     const storedMarkdown = localStorage.getItem("mark");
     if (storedMarkdown) {
       setMarkdown(JSON.parse(storedMarkdown));
     }
   }, []);
-
+  const location = useLocation();
+  const file = location.state?.file || "markdown";
   return (
     <>
-      <div className="lg:flex">
-        <div id="texts" className="lg:flex lg:w-full lg:min-h-screen bg-transparent">
+      <div className="lg:flex lg:gap-2">
+        <div
+          id="texts"
+          className="mockup-window min-h-screen border border-white lg:flex lg:h-[100vh] lg:w-full"
+        >
+          <h1 className="ml-2 font-bold text-gray-50">{file}</h1>
           <Editor
             width="100%"
             height="100vh"
@@ -44,7 +48,7 @@ const Page = ({ markdowns }) => {
                 wordWrap: "on",
                 verticalHasArrows: false,
                 horizontalHasArrows: false,
-                verticalScrollbarSize: 8,   // Ukuran scrollbar vertikal
+                verticalScrollbarSize: 8, // Ukuran scrollbar vertikal
                 horizontalScrollbarSize: 8, // Ukuran scrollbar horizontal
                 handleMouseWheel: true,
                 alwaysConsumeMouseWheel: false,
@@ -54,14 +58,14 @@ const Page = ({ markdowns }) => {
               hideCursorInOverviewRuler: true, // Menghilangkan kursor di overview ruler
             }}
           />
-       </div>
+        </div>
         <div id="box" className="hidden lg:flex lg:w-full">
           <Live markdowns={markdown} />
         </div>
       </div>
-      <div className="flex justify-items-center items-center m-auto">
-      <Btn onClick={handleToggle} />
-      <Btndw onClick={handleDownload} />
+      <div className="m-auto flex items-center justify-items-center">
+        <Btn onClick={handleToggle} />
+        <Btndw onClick={handleDownload} />
       </div>
     </>
   );

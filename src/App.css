@@ -3,32 +3,32 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   background: #1e1e1e;
   color: white;
 }
 .markdown-preview h1 {
- color: white;
+  color: white;
 }
 .markdown-preview h2 {
   color: white;
- }
- .markdown-preview h3 {
+}
+.markdown-preview h3 {
   color: white;
- }
- .markdown-preview h4 {
+}
+.markdown-preview h4 {
   color: white;
- }
- .markdown-preview h5 {
+}
+.markdown-preview h5 {
   color: white;
- }
- .markdown-preview h6 {
+}
+.markdown-preview h6 {
   color: white;
- }
- .markdown-preview a {
+}
+.markdown-preview a {
   color: white;
- }
- /* Tambahkan ini di App.css atau file CSS lain */
+}
+/* Tambahkan ini di App.css atau file CSS lain */
 .markdown-preview h1 {
   font-size: 2em;
   margin-bottom: 0.5em;
@@ -43,7 +43,8 @@ body{
   padding-bottom: 0.3em;
 }
 
-.markdown-preview ul, .markdown-preview ol {
+.markdown-preview ul,
+.markdown-preview ol {
   padding-left: 1.5em;
   margin: 0.5em 0;
 }
@@ -52,12 +53,11 @@ body{
   margin: 0.3em 0;
 }
 
-
 .markdown-preview code {
   background-color: #2c2a2a; /* Warna latar belakang untuk kode inline */
   padding: 2px 4px; /* Padding untuk ruang di sekitar kode */
   border-radius: 3px; /* Membuat sudut sedikit melengkung */
-  font-family: 'Courier New', Courier, monospace; /* Menggunakan font monospace */
+  font-family: "Courier New", Courier, monospace; /* Menggunakan font monospace */
   color: white;
 }
 .markdown-preview pre {
@@ -73,7 +73,8 @@ body{
   margin: 1em 0;
 }
 
-.markdown-preview th, .markdown-preview td {
+.markdown-preview th,
+.markdown-preview td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
