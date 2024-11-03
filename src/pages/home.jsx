@@ -59,7 +59,7 @@ const Page = ({ markdowns }) => {
           <Live markdowns={markdown} />
         </div>
       </div>
-      <div>
+      <div className="flex justify-items-center items-center m-auto">
       <Btn onClick={handleToggle} />
       <Btndw onClick={handleDownload} />
       </div>
