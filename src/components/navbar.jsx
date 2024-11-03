@@ -1,5 +1,7 @@
 import { Book, Bookmark, GitHub } from "react-feather";
 import { Link } from "react-router-dom";
+
+
 const Nav = () => {
   return (
     <>
@@ -13,6 +15,7 @@ const Nav = () => {
         <ul className="flex">
           <li className="mr-5 text-xs"><Link to="/docs" ><Book  size={20}/></Link></li>
           <li className="mr-5 text-xs"><Link to="/home" ><GitHub size={20}/></Link></li>
+          
         </ul>
       </div>
     </>

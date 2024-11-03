@@ -2,6 +2,9 @@ import Btn from "../components/buttons";
 import Live from "../components/livepriview";
 import { useState, useEffect } from "react";
 import  Editor  from '@monaco-editor/react';
+import download from "downloadjs";
+import Btndw from "../components/btn";
+
 
 const Page = ({ markdowns }) => {
   const [markdown, setMarkdown] = useState('');
@@ -14,6 +17,9 @@ const Page = ({ markdowns }) => {
     document.getElementById('box').classList.toggle('hidden');
     document.getElementById('texts').classList.toggle('hidden');
   };
+  const handleDownload = () => {
+    download(markdown, 'markdown.md', 'text/markdown');
+  }
   useEffect(() => {
     const storedMarkdown = localStorage.getItem("mark");
     if (storedMarkdown) {
@@ -53,7 +59,10 @@ const Page = ({ markdowns }) => {
           <Live markdowns={markdown} />
         </div>
       </div>
+      <div>
       <Btn onClick={handleToggle} />
+      <Btndw onClick={handleDownload} />
+      </div>
     </>
   );
 };
