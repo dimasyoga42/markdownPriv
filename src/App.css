@@ -25,6 +25,9 @@
  .markdown-preview h6 {
   color: white;
  }
+ .markdown-preview a {
+  color: white;
+ }
  /* Tambahkan ini di App.css atau file CSS lain */
 .markdown-preview h1 {
   font-size: 2em;
@@ -49,12 +52,14 @@
   margin: 0.3em 0;
 }
 
+
 .markdown-preview code {
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
+  background-color: gray; /* Warna latar belakang untuk kode inline */
+  padding: 2px 4px; /* Padding untuk ruang di sekitar kode */
+  border-radius: 3px; /* Membuat sudut sedikit melengkung */
+  font-family: 'Courier New', Courier, monospace; /* Menggunakan font monospace */
   color: white;
 }
-
 .markdown-preview pre {
   background-color: #2c2a2a;
   padding: 1em;

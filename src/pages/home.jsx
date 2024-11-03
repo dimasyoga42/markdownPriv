@@ -2,6 +2,7 @@ import Btn from "../components/buttons";
 import Live from "../components/livepriview";
 import { useState, useEffect } from "react";
 import Editor from '@monaco-editor/react';
+import Btndw from "../components/btn";
 
 const Page = ({ markdowns }) => {
   const [markdown, setMarkdown] = useState('');
@@ -10,7 +11,6 @@ const Page = ({ markdowns }) => {
     setMarkdown(value);
     localStorage.setItem("mark", JSON.stringify(value));
   };
-
   const handleToggle = () => {
     document.getElementById('box').classList.toggle('hidden');
     document.getElementById('texts').classList.toggle('hidden')
