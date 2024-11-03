@@ -11,8 +11,8 @@ const Nav = () => {
           </div>
         </div>
         <ul className="flex">
-          <li className="mr-5 text-xs"><Link to="/home" key="/home"><Book  size={20}/></Link></li>
-          <li className="mr-5 text-xs"><Link to="/home" key="/home"><GitHub size={20}/></Link></li>
+          <li className="mr-5 text-xs"><Link to="/docs" ><Book  size={20}/></Link></li>
+          <li className="mr-5 text-xs"><Link to="/home" ><GitHub size={20}/></Link></li>
         </ul>
       </div>
     </>
