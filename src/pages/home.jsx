@@ -1,8 +1,7 @@
 import Btn from "../components/buttons";
 import Live from "../components/livepriview";
 import { useState, useEffect } from "react";
-import Editor from '@monaco-editor/react';
-import Btndw from "../components/btn";
+import  Editor  from '@monaco-editor/react';
 
 const Page = ({ markdowns }) => {
   const [markdown, setMarkdown] = useState('');
@@ -13,10 +12,8 @@ const Page = ({ markdowns }) => {
   };
   const handleToggle = () => {
     document.getElementById('box').classList.toggle('hidden');
-    document.getElementById('texts').classList.toggle('hidden')
-
+    document.getElementById('texts').classList.toggle('hidden');
   };
-
   useEffect(() => {
     const storedMarkdown = localStorage.getItem("mark");
     if (storedMarkdown) {
@@ -27,12 +24,12 @@ const Page = ({ markdowns }) => {
   return (
     <>
       <div className="lg:flex">
-        <div id="texts" className="lg:flex lg:w-full lg:min-h-screen">
+        <div id="texts" className="lg:flex lg:w-full lg:min-h-screen bg-transparent">
           <Editor
             width="100%"
             height="100vh"
             defaultLanguage="markdown"
-            defaultValue="mulai lah mengetik markdown"
+            defaultValue="_+"
             onChange={handleChange}
             value={markdown}
             theme="vs-dark"
