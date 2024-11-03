@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 * {
-  background: #1e293b;
+  background: #0f172a;
   color: white;
 }
 .markdown-preview h1 {
@@ -76,4 +76,8 @@
 
 .markdown-preview th {
   background-color: #f0f0f0;
+}
+.markdown-preview::selection {
+  background-color: #f0f0f0;
+  color: black;
 }
