@@ -52,7 +52,7 @@ const Page = ({ markdowns }) => {
             }}
           />
        </div>
-        <div id="box" className="hidden lg:flex lg:w-full">
+        <div id="box" className="hidden md:flex md:w-full">
           <Live markdowns={markdown} />
         </div>
       </div>

@@ -55,7 +55,7 @@ const handleKeyUp = (event) => {
 };
   return (
     <>
-      <div className="border border-white rounded-sm  w-full min-h-screen  lg:h-[100vh] overflow-hidden overflow-x-hidden  overflow-scroll">
+      <div className="border border-white rounded-sm  w-full min-h-screen  lg:h-[100vh] overflow-hidden overflow-x-hidden overflow-scroll">
         <div className="markdown-preview p-4 prose font-poppins w-full h-full">
           <ReactMarkdown remarkPlugins={[remarkGfm]} ref={contentRef} value={text} onKeyUp={handleKeyUp} onChange={(e) => handleChange(e.target.value)}>{markdowns}</ReactMarkdown>
         </div>
