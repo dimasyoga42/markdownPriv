@@ -5,7 +5,7 @@ function App() {
   const [markdown, setMarkdown] = useState("");
 
   useEffect(() => {
-    fetch('./../../public/docs.md')
+    fetch('/../../public/docs.md')
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
   }, []);
