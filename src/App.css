@@ -89,6 +89,26 @@ body {
 .markdown-preview hr {
   border: none;
   height: 2px;
-  background-color: #ffffff; /* Warna garis horizontal */
-  margin: 20px 0; /* Margin atas dan bawah */
+  background-color: #1e1e1e; 
+  margin: 20px 0; 
+}
+
+
+::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1e1e1e; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1e1e1e; 
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color:#1e1e1e #1e1e1e;
 }
