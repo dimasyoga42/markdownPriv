@@ -89,8 +89,11 @@ body {
 .markdown-preview hr {
   border: none;
   height: 2px;
-  background-color: #1e1e1e; 
+  background-color: white; 
   margin: 20px 0; 
+}
+.markdown-preview strong {
+  color: white;
 }
 
 
