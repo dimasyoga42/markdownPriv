@@ -26,12 +26,10 @@ const Live = ({ markdowns }) => {
 
   return (
     <>
-      <div className="h-screen w-full rounded-2xl border  border-white mockup-window">
-        <div className="markdown-preview prose  h-full w-full m-auto font-poppins overscroll-auto overflow-scroll">
+      <div className="mockup-window h-screen w-full rounded-2xl border border-white">
+        <div className="markdown-preview prose m-auto h-full w-full overflow-scroll overscroll-auto font-poppins">
           <div className="p-3" ref={contentRef}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {markdowns}
-            </ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdowns}</ReactMarkdown>
           </div>
         </div>
       </div>

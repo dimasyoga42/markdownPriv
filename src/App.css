@@ -89,29 +89,28 @@ body {
 .markdown-preview hr {
   border: none;
   height: 2px;
-  background-color: white; 
-  margin: 20px 0; 
+  background-color: white;
+  margin: 20px 0;
 }
 .markdown-preview strong {
   color: white;
 }
 
-
 ::-webkit-scrollbar {
-  width: 8px; 
-  height: 8px; 
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #1e1e1e; 
-  border-radius: 10px; 
+  background-color: #1e1e1e;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #1e1e1e; 
+  background-color: #1e1e1e;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color:#1e1e1e #1e1e1e;
+  scrollbar-color: #1e1e1e #1e1e1e;
 }
