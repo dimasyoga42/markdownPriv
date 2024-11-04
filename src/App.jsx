@@ -4,7 +4,7 @@ import "./App.css";
 import Nav from "./components/navbar";
 import Page from "./pages/home";
 import Dcos from "./pages/docs";
-import New from "./pages/newfile";
+// import New from "./pages/newfile";
 
 function App() {
   return (
@@ -12,8 +12,8 @@ function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route path="/" element={<New />} />
-          <Route path="/home" element={<Page />} />
+          {/* <Route path="/" element={<New />} /> */}
+          <Route path="/" element={<Page />} />
           <Route path="/docs" element={<Dcos />} />
         </Routes>
       </Router>

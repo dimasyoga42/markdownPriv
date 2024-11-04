@@ -4,20 +4,25 @@ import { useState, useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import download from "downloadjs";
 import Btndw from "../components/btn";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 const Page = ({ markdowns }) => {
   const [markdown, setMarkdown] = useState("");
   const handleChange = (value) => {
     setMarkdown(value);
-    localStorage.setItem(`marl`, JSON.stringify(value));
+    localStorage.setItem(`mark`, JSON.stringify(value));
   };
   const handleToggle = () => {
     document.getElementById("box").classList.toggle("hidden");
     document.getElementById("texts").classList.toggle("hidden");
   };
   const handleDownload = () => {
-    download(markdown, `${file}.md`, "text/markdown");
+    const promot = prompt("masukan nama file:");
+    if (promot) {
+      download(markdown, `${promot}.md`, "text/markdown");
+    } else {
+      alert("download batal di lakukan.");
+    }
   };
   useEffect(() => {
     const storedMarkdown = localStorage.getItem(`mark`);
@@ -25,8 +30,8 @@ const Page = ({ markdowns }) => {
       setMarkdown(JSON.parse(storedMarkdown));
     }
   }, []);
-  const location = useLocation();
-  const file = location.state?.file || "markdown";
+  // const location = useLocation();
+  // const file = location.state?.file || "markdown";
   return (
     <>
       <div className="lg:flex lg:gap-2">
@@ -34,7 +39,7 @@ const Page = ({ markdowns }) => {
           id="texts"
           className="mockup-window min-h-screen border border-white lg:flex lg:h-[100vh] lg:w-full"
         >
-          <h1 className="ml-2 font-bold text-gray-50">{file}</h1>
+          {/* <h1 className="ml-2 font-bold text-gray-50">{file}</h1> */}
           <Editor
             width="100%"
             height="100vh"
