@@ -4,10 +4,14 @@ import { useState, useEffect } from "react";
 import Editor from "@monaco-editor/react";
 import download from "downloadjs";
 import Btndw from "../components/btn";
+import Promot from "../components/promots";
 // import { useLocation } from "react-router-dom";
 
-const Page = ({ markdowns }) => {
+const Page = ({ markdowns, value }) => {
   const [markdown, setMarkdown] = useState("");
+  const [fileName, setFileName] = useState("");
+  const [isPromotVisible, setIsPromotVisible] = useState(false);
+
   const handleChange = (value) => {
     setMarkdown(value);
     localStorage.setItem(`mark`, JSON.stringify(value));
@@ -16,13 +20,25 @@ const Page = ({ markdowns }) => {
     document.getElementById("box").classList.toggle("hidden");
     document.getElementById("texts").classList.toggle("hidden");
   };
+
   const handleDownload = () => {
-    const promot = prompt("masukan nama file:");
-    if (promot) {
-      download(markdown, `${promot}.md`, "text/markdown");
-    } else {
-      alert("download batal di lakukan.");
+    setIsPromotVisible(true);
+    document.body.classList.add("overflow-hidden");
+  };
+
+  const handleFileNameChange = (e) => {
+    setFileName(e.target.value);
+  };
+
+  const handleFileDownload = () => {
+    if (fileName) {
+      download(markdown, `${fileName}.md`, "text/markdown");
+      setIsPromotVisible(false);
     }
+  };
+  const closePromot = () => {
+    setIsPromotVisible(false);
+    document.body.classList.remove("overflow-hidden"); // Hapus overflow-hidden saat modal ditutup
   };
   useEffect(() => {
     const storedMarkdown = localStorage.getItem(`mark`);
@@ -32,12 +48,13 @@ const Page = ({ markdowns }) => {
   }, []);
   // const location = useLocation();
   // const file = location.state?.file || "markdown";
+
   return (
     <>
-      <div className="lg:flex lg:gap-2">
+      <div className="flex w-full items-center justify-center justify-items-center lg:flex lg:items-center lg:justify-center lg:justify-items-center lg:gap-2">
         <div
           id="texts"
-          className="mockup-window min-h-screen border border-white lg:flex lg:h-[100vh] lg:w-full"
+          className="mockup-window min-h-screen w-full border border-white lg:flex lg:h-[100vh] lg:w-full"
         >
           {/* <h1 className="ml-2 font-bold text-gray-50">{file}</h1> */}
           <Editor
@@ -62,13 +79,26 @@ const Page = ({ markdowns }) => {
               scrollBeyondLastLine: false, // Menonaktifkan scroll lebih dari akhir baris
               hideCursorInOverviewRuler: true, // Menghilangkan kursor di overview ruler
             }}
+            className={isPromotVisible ? "pointer-events-none" : ""}
           />
         </div>
-        <div id="box" className="hidden lg:flex lg:w-full">
+        <div id="box" className="hidden w-full lg:flex">
           <Live markdowns={markdown} />
         </div>
+        {/* Overlay */}
+        {isPromotVisible && (
+          <div className="fixed inset-0 z-40 bg-transparent backdrop-blur-sm"></div>
+        )}
+        <Promot
+          oke={handleFileDownload}
+          batal={closePromot}
+          value={fileName}
+          onChange={handleFileNameChange}
+          id="promotModal"
+          className={isPromotVisible ? "" : "hidden"}
+        />
       </div>
-      <div className="m-auto flex items-center justify-items-center">
+      <div className="m-auto flex place-items-center justify-items-center">
         <Btn onClick={handleToggle} />
         <Btndw onClick={handleDownload} />
       </div>

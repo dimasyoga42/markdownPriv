@@ -23,11 +23,13 @@ const Live = ({ markdowns }) => {
   }, []);
   return (
     <>
-      <div className="overflow-scrol min-h-screen w-full overflow-hidden overflow-x-hidden rounded-xl border border-white md:w-full lg:h-[100vh]">
-        <div className="markdown-preview prose mockup-window h-full w-full rounded-md p-4 font-poppins">
-          <ReactMarkdown remarkPlugins={[remarkGfm]} ref={contentRef}>
-            {markdowns}
-          </ReactMarkdown>
+      <div className="overflow-scrol min-h-screen w-full overflow-hidden overflow-x-hidden rounded-2xl border border-white md:w-full lg:h-[100vh]">
+        <div className="markdown-preview prose mockup-window h-full w-full rounded-md font-poppins">
+          <div className="pl-3">
+            <ReactMarkdown remarkPlugins={[remarkGfm]} ref={contentRef}>
+              {markdowns}
+            </ReactMarkdown>
+          </div>
         </div>
       </div>
     </>
