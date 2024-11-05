@@ -1,5 +1,24 @@
-// settings.json
 {
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode" // Pastikan menggunakan Prettier sebagai formatter
+  "javascript.validate.enable": false, // Menonaktifkan validasi JavaScript karena kita menggunakan ESLint
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ], // Menambahkan dukungan linting untuk JavaScript/React
+  "editor.formatOnSave": true, // Memformat otomatis setiap kali menyimpan file
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true // Mengaktifkan perbaikan otomatis dengan ESLint saat menyimpan
+  },
+  "files.autoSave": "onFocusChange", // Menyimpan otomatis saat berpindah jendela/editor
+  "files.associations": {
+    "*.js": "javascriptreact", // Memperlakukan file .js sebagai React secara default
+    "*.jsx": "javascriptreact"
+  },
+  "editor.tabSize": 2, // Mengatur ukuran tab menjadi 2 spasi
+  "prettier.singleQuote": true, // Menggunakan tanda kutip tunggal untuk Prettier
+  "prettier.jsxSingleQuote": true, // Menggunakan tanda kutip tunggal untuk JSX dengan Prettier
+  "prettier.trailingComma": "es5", // Menambahkan koma di akhir elemen dalam objek dan array
+  "prettier.semi": false, // Tidak menggunakan titik koma di akhir baris
+  "prettier.arrowParens": "avoid" // Menghindari penggunaan tanda kurung untuk parameter tunggal pada arrow function
 }
