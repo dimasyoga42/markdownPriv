@@ -96,8 +96,7 @@ body {
   color: white;
 }
 .markdown-preview blockquote {
-  color: #3a3a3a;
-  background-color: #f0f0f5;
+  color: white;
   border-left: 4px solid #007acc; 
   padding: 10px 20px;
   margin: 10px 0;
